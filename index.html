@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syed Uzair Mohiuddin | Data Analyst Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .nav-active {
+            border-bottom: 2px solid #ea580c; /* Orange-600 */
+            color: #ea580c;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* AI Chat Animations */
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .chat-message {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+        .typing-dot {
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-[#fdfbf7] text-gray-800 antialiased selection:bg-orange-100 selection:text-orange-800">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-bold text-xl tracking-tight text-gray-900">SU<span class="text-orange-600">.</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <button onclick="scrollToSection('hero')" class="nav-item nav-active text-sm font-medium hover:text-orange-600 transition-colors" id="nav-hero">Home</button>
+                    <button onclick="scrollToSection('skills')" class="nav-item text-gray-500 text-sm font-medium hover:text-orange-600 transition-colors" id="nav-skills">Skills Analytics</button>
+                    <button onclick="scrollToSection('projects')" class="nav-item text-gray-500 text-sm font-medium hover:text-orange-600 transition-colors" id="nav-projects">Projects</button>
+                    <button onclick="scrollToSection('experience')" class="nav-item text-gray-500 text-sm font-medium hover:text-orange-600 transition-colors" id="nav-experience">Experience</button>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button onclick="toggleAIChat()" class="hidden md:flex items-center gap-2 bg-orange-100 text-orange-700 px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-orange-200 transition-colors border border-orange-200">
+                        ✨ Ask AI About Me
+                    </button>
+                    <!-- GitHub Icon Link -->
+                    <a href="https://github.com/SyedUzair-SF" target="_blank" class="text-gray-500 hover:text-gray-900 transition-colors" title="View GitHub Profile">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <button onclick="window.open('https://linkedin.com/in/syed-uzair-mohiuddin', '_blank')" class="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors shadow-lg">
+                        Connect
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+
+        <!-- Section: Hero -->
+        <section id="hero" class="min-h-[90vh] flex items-center justify-center relative overflow-hidden">
+            <!-- Background Decoration -->
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-orange-100 opacity-50 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-blue-50 opacity-50 blur-3xl"></div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-orange-600 uppercase bg-orange-100 rounded-full">
+                    Available for Immediate Hire
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-6">
+                    Data Insights that <br> <span class="text-orange-600">Drive Decisions.</span>
+                </h1>
+                <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Hi, I'm <span class="font-semibold text-gray-900">Syed Uzair Mohiuddin</span>. 
+                    I transform raw data into clear, actionable business strategies using Excel, SQL, and Power BI.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="scrollToSection('projects')" class="px-8 py-3.5 rounded-xl bg-orange-600 text-white font-semibold hover:bg-orange-700 transition shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                        View Case Studies
+                    </button>
+                    <button onclick="toggleAIChat()" class="px-8 py-3.5 rounded-xl bg-white text-gray-700 border border-orange-200 font-semibold hover:bg-orange-50 transition shadow-sm flex items-center justify-center gap-2">
+                        <span>✨</span> Interview My AI Agent
+                    </button>
+                </div>
+                
+                <!-- Quick Stats Row -->
+                <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-200 pt-8">
+                    <div>
+                        <div class="text-3xl font-bold text-gray-900">Excel / BI</div>
+                        <div class="text-sm text-gray-500">Reporting Stack</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-gray-900">SQL / Py</div>
+                        <div class="text-sm text-gray-500">Data Processing</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-gray-900">1 Yr</div>
+                        <div class="text-sm text-gray-500">Analytics Experience</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-gray-900">2 Major</div>
+                        <div class="text-sm text-gray-500">Case Studies</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Skills Analytics -->
+        <section id="skills" class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Intro Text -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Technical Proficiency</h2>
+                        <p class="text-gray-600 mb-6 text-lg">
+                            My skillset is balanced between advanced Excel reporting, SQL data manipulation, and Power BI visualization. I ensure data is accurate, clean, and ready for business decisions.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <!-- Skill Bars -->
+                             <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm font-medium text-gray-700">Excel (Pivot Tables, Power Query, Lookups)</span>
+                                    <span class="text-sm font-medium text-gray-500">Advanced</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-orange-600 h-2 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm font-medium text-gray-700">SQL (Joins, CTEs, Windows Functions)</span>
+                                    <span class="text-sm font-medium text-gray-500">Advanced</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-gray-800 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm font-medium text-gray-700">Power BI & Visualization</span>
+                                    <span class="text-sm font-medium text-gray-500">Intermediate</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-orange-500 h-2 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                             <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm font-medium text-gray-700">Python (Pandas, Data Cleaning)</span>
+                                    <span class="text-sm font-medium text-gray-500">Intermediate</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-400 h-2 rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Radar Chart Container -->
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-inner border border-gray-100">
+                        <div class="chart-container">
+                            <canvas id="skillsChart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-gray-400 mt-4">Interactive Radar: Proficiency by Domain</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Projects Lab -->
+        <section id="projects" class="py-20 bg-[#fdfbf7]">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900">Project Case Studies</h2>
+                    <p class="mt-4 text-gray-600">Select a domain to filter my work.</p>
+                    
+                    <!-- Filters -->
+                    <div class="mt-6 flex justify-center space-x-2">
+                        <button onclick="filterProjects('all')" class="filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-gray-900 text-white shadow-md transition-all active-filter" data-filter="all">All</button>
+                        <button onclick="filterProjects('sales')" class="filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:bg-orange-50 transition-all" data-filter="sales">Sales Analytics</button>
+                        <button onclick="filterProjects('customer')" class="filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:bg-orange-50 transition-all" data-filter="customer">Customer Behavior</button>
+                    </div>
+                </div>
+
+                <!-- Project Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card sales bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">US Regional Sales</div>
+                            <span class="text-gray-400 text-sm">2024</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Revenue Optimization Dashboard</h3>
+                        <p class="text-gray-600 mb-6 text-sm line-clamp-2">Analyzing 5 years of unlinked sales tables to identify seasonal trends and profitability drivers using Python and Power BI.</p>
+                        
+                        <!-- Interactive Tabs -->
+                        <div class="bg-gray-50 rounded-xl p-1 mb-6 flex space-x-1">
+                            <button onclick="switchTab(this, 'p1-problem')" class="flex-1 py-2 text-xs font-bold text-center rounded-lg bg-white shadow-sm text-gray-900 transition-all">Problem</button>
+                            <button onclick="switchTab(this, 'p1-solution')" class="flex-1 py-2 text-xs font-bold text-center rounded-lg text-gray-500 hover:text-gray-900 transition-all">Solution</button>
+                            <button onclick="switchTab(this, 'p1-impact')" class="flex-1 py-2 text-xs font-bold text-center rounded-lg text-gray-500 hover:text-orange-600 transition-all">Impact</button>
+                        </div>
+
+                        <!-- Tab Content -->
+                        <div id="p1-content" class="h-32">
+                            <div id="p1-problem" class="tab-pane block">
+                                <p class="text-sm text-gray-600"><strong>Challenge:</strong> The stakeholder had 5 years of raw, disjointed sales data across multiple regions with no clear view of which products were actually profitable versus just high-revenue.</p>
+                            </div>
+                            <div id="p1-solution" class="tab-pane hidden">
+                                <p class="text-sm text-gray-600"><strong>Tech Stack:</strong> Power BI & Python.<br><strong>Action:</strong> Engineered 'Profit Margin' and 'AOV' features. Merged unlinked tables and built a dynamic dashboard allowing self-service filtering.</p>
+                            </div>
+                            <div id="p1-impact" class="tab-pane hidden">
+                                <p class="text-sm text-gray-600"><strong>Results:</strong><br>• Identified top 2 SKUs driving <span class="text-orange-600 font-bold">25%</span> of revenue.<br>• Revealed Export channel yields <span class="text-orange-600 font-bold">38%</span> margins.<br>• Enabled data-driven pricing optimization.</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 pt-4 border-t border-gray-100 flex gap-2">
+                            <span class="text-xs text-gray-400 font-mono bg-gray-100 px-2 py-1 rounded">Power BI</span>
+                            <span class="text-xs text-gray-400 font-mono bg-gray-100 px-2 py-1 rounded">Python</span>
+                            <span class="text-xs text-gray-400 font-mono bg-gray-100 px-2 py-1 rounded">ETL</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card customer bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Retail Behavior</div>
+                            <span class="text-gray-400 text-sm">2024</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Customer Segmentation Model</h3>
+                        <p class="text-gray-600 mb-6 text-sm line-clamp-2">Processing 3,900+ transactions to build a loyalty model and retention strategy using PostgreSQL and Statistical Analysis.</p>
+                        
+                        <!-- Interactive Tabs -->
+                        <div class="bg-gray-50 rounded-xl p-1 mb-6 flex space-x-1">
+                            <button onclick="switchTab(this, 'p2-problem')" class="flex-1 py-2 text-xs font-bold text-center rounded-lg bg-white shadow-sm text-gray-900 transition-all">Problem</button>
+                            <button onclick="switchTab(this, 'p2-solution')" class="flex-1 py-2 text-xs font-bold text-center rounded-lg text-gray-500 hover:text-gray-900 transition-all">Solution</button>
+                            <button onclick="switchTab(this, 'p2-impact')" class="flex-1 py-2 text-xs font-bold text-center rounded-lg text-gray-500 hover:text-orange-600 transition-all">Impact</button>
+                        </div>
+
+                        <!-- Tab Content -->
+                        <div id="p2-content" class="h-32">
+                            <div id="p2-problem" class="tab-pane block">
+                                <p class="text-sm text-gray-600"><strong>Challenge:</strong> Marketing team needed to understand spending habits to target promotions effectively. Generic blasting of emails was resulting in low conversion.</p>
+                            </div>
+                            <div id="p2-solution" class="tab-pane hidden">
+                                <p class="text-sm text-gray-600"><strong>Tech Stack:</strong> PostgreSQL, SQL Window Functions.<br><strong>Action:</strong> Developed a 3-segment model (Loyal, Returning, New). Analyzed shipping preferences and subscription correlation.</p>
+                            </div>
+                            <div id="p2-impact" class="tab-pane hidden">
+                                <p class="text-sm text-gray-600"><strong>Results:</strong><br>• Found subscribers contribute <span class="text-orange-600 font-bold">45%</span> of revenue.<br>• Express shipping users spend <span class="text-orange-600 font-bold">12%</span> more.<br>• Created targeted retention strategy roadmap.</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 pt-4 border-t border-gray-100 flex gap-2">
+                            <span class="text-xs text-gray-400 font-mono bg-gray-100 px-2 py-1 rounded">PostgreSQL</span>
+                            <span class="text-xs text-gray-400 font-mono bg-gray-100 px-2 py-1 rounded">Stats</span>
+                            <span class="text-xs text-gray-400 font-mono bg-gray-100 px-2 py-1 rounded">Excel Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Experience -->
+        <section id="experience" class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Experience & Education</h2>
+                
+                <div class="relative border-l-2 border-orange-100 ml-4 space-y-12">
+                    <!-- Exp Item 1 -->
+                    <div class="relative pl-8">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-orange-500 border-4 border-white shadow"></div>
+                        <h3 class="text-xl font-bold text-gray-900">Data Science Intern (Analytics Projects)</h3>
+                        <div class="text-orange-600 font-semibold mb-2">Full Stack Academy – Industry Training Program | Hyderabad | Jan 2025 – Present</div>
+                        <ul class="list-disc ml-4 text-gray-600 text-sm space-y-2">
+                            <li>Analyzed and cleaned structured datasets using SQL and Python to support reporting and exploratory analysis.</li>
+                            <li>Performed data validation and EDA to identify trends, inconsistencies, and basic anomalies in sales and customer data.</li>
+                            <li>Wrote SQL queries (joins, aggregations) to answer ad-hoc business questions and support internal reports.</li>
+                            <li>Built Power BI dashboards with KPI metrics (revenue, growth, customer behavior) and interactive filters.</li>
+                            <li>Created Excel reports using pivot tables to summarize and review performance metrics.</li>
+                            <li>Automated recurring reporting tasks to reduce manual effort and errors.</li>
+                            <li>Collaborated with team members to translate business questions into data analysis tasks.</li>
+                            <li>Documented analysis steps, assumptions, and findings for project reviews.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Exp Item 2 -->
+                    <div class="relative pl-8">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-300 border-4 border-white"></div>
+                        <h3 class="text-xl font-bold text-gray-900">Google Advanced Data Analytics Certificate</h3>
+                        <div class="text-gray-500 font-semibold mb-2">Google (Coursera) | 2024</div>
+                        <p class="text-gray-600">
+                            Comprehensive curriculum covering Python, SQL, Statistics, and Machine Learning.
+                        </p>
+                    </div>
+
+                    <!-- Exp Item 3 -->
+                    <div class="relative pl-8">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-300 border-4 border-white"></div>
+                        <h3 class="text-xl font-bold text-gray-900">Bachelor of Engineering (CS)</h3>
+                        <div class="text-gray-500 font-semibold mb-2">Osmania University | 2020 - 2024</div>
+                        <p class="text-gray-600">
+                            Built strong foundation in algorithms, database management systems, and software engineering principles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-12">
+            <div class="max-w-6xl mx-auto px-4 text-center">
+                <h2 class="text-2xl font-bold mb-6">Let's solve your data problems.</h2>
+                <div class="flex justify-center items-center space-x-6 mb-8">
+                    <a href="mailto:syeduzair041@gmail.com" class="text-gray-400 hover:text-white transition">syeduzair041@gmail.com</a>
+                    <span class="text-gray-600">|</span>
+                    <a href="https://linkedin.com/in/syed-uzair-mohiuddin" target="_blank" class="text-gray-400 hover:text-white transition">LinkedIn</a>
+                    <span class="text-gray-600">|</span>
+                    <a href="https://github.com/SyedUzair-SF" target="_blank" class="text-gray-400 hover:text-white transition">GitHub</a>
+                </div>
+                <p class="text-gray-600 text-sm">© 2025 Syed Uzair Mohiuddin. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <!-- Floating AI Chat Button -->
+        <div class="fixed bottom-6 right-6 z-50">
+            <button onclick="toggleAIChat()" class="bg-gray-900 hover:bg-orange-600 text-white rounded-full p-4 shadow-2xl transition-all hover:scale-105 flex items-center justify-center group">
+                <span class="text-2xl">✨</span>
+                <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 ease-in-out whitespace-nowrap group-hover:pl-2 text-sm font-bold">Ask AI Agent</span>
+            </button>
+        </div>
+
+        <!-- AI Chat Modal -->
+        <div id="ai-modal" class="fixed inset-0 z-50 hidden flex items-end sm:items-center justify-center sm:justify-end sm:px-6 pointer-events-none">
+            <!-- Backdrop -->
+            <div onclick="toggleAIChat()" class="absolute inset-0 bg-black/20 backdrop-blur-sm pointer-events-auto transition-opacity opacity-0" id="ai-backdrop"></div>
+            
+            <!-- Modal Content -->
+            <div class="bg-white w-full sm:w-[400px] h-[85vh] sm:h-[600px] rounded-t-2xl sm:rounded-2xl shadow-2xl flex flex-col pointer-events-auto transform translate-y-full transition-transform duration-300" id="ai-panel">
+                
+                <!-- Header -->
+                <div class="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50 rounded-t-2xl">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-lg">✨</div>
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-sm">Syed's AI Agent</h3>
+                            <p class="text-xs text-green-600 flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-green-500"></span> Online</p>
+                        </div>
+                    </div>
+                    <button onclick="toggleAIChat()" class="text-gray-400 hover:text-gray-600 p-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Chat Area -->
+                <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50/50">
+                    <!-- Intro Message -->
+                    <div class="flex gap-3">
+                        <div class="w-8 h-8 rounded-full bg-orange-100 flex-shrink-0 flex items-center justify-center text-xs">AI</div>
+                        <div class="bg-white border border-gray-200 rounded-2xl rounded-tl-none p-3 text-sm text-gray-700 shadow-sm max-w-[85%]">
+                            Hello! I'm Syed's virtual assistant. I can answer questions about his skills, projects, or even draft a cover letter for your company.
+                        </div>
+                    </div>
+                    
+                    <!-- Suggestions -->
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <button onclick="sendQuickMessage('What are his top skills?')" class="text-xs bg-white border border-orange-200 text-orange-700 px-3 py-1.5 rounded-full hover:bg-orange-50 transition">🏆 Top Skills?</button>
+                        <button onclick="sendQuickMessage('Explain the Revenue Project')" class="text-xs bg-white border border-orange-200 text-orange-700 px-3 py-1.5 rounded-full hover:bg-orange-50 transition">📊 Revenue Project?</button>
+                        <button onclick="sendQuickMessage('Why should we hire him?')" class="text-xs bg-white border border-orange-200 text-orange-700 px-3 py-1.5 rounded-full hover:bg-orange-50 transition">🤝 Why hire him?</button>
+                    </div>
+                </div>
+
+                <!-- Loading Indicator -->
+                <div id="typing-indicator" class="hidden px-4 py-2 bg-gray-50 border-t border-gray-100 text-xs text-gray-500 flex items-center gap-1">
+                    <span>Syed's AI is thinking</span>
+                    <span class="typing-dot">.</span><span class="typing-dot">.</span><span class="typing-dot">.</span>
+                </div>
+
+                <!-- Input Area -->
+                <div class="p-4 border-t border-gray-100 bg-white rounded-b-2xl">
+                    <form onsubmit="handleChatSubmit(event)" class="relative">
+                        <input type="text" id="chat-input" placeholder="Ask me anything..." 
+                            class="w-full pl-4 pr-12 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all">
+                        <button type="submit" class="absolute right-2 top-2 p-1.5 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition shadow-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                        </button>
+                    </form>
+                    <div class="mt-2 text-[10px] text-gray-400 text-center">
+                        Powered by Gemini AI • Answers based on resume data
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // --- Navigation Scroll Logic ---
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+            
+            // Update Active State
+            document.querySelectorAll('.nav-item').forEach(el => {
+                el.classList.remove('nav-active', 'text-orange-600');
+                el.classList.add('text-gray-500');
+            });
+            document.getElementById('nav-' + id).classList.add('nav-active');
+            document.getElementById('nav-' + id).classList.remove('text-gray-500');
+        }
+
+        // --- Chart.js: Skills Radar ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('skillsChart').getContext('2d');
+            
+            const data = {
+                labels: ['Data Cleaning', 'SQL Querying', 'Statistical Analysis', 'Excel & Reporting', 'Data Viz', 'Communication'],
+                datasets: [{
+                    label: 'Skill Proficiency Level',
+                    data: [95, 90, 80, 95, 75, 85],
+                    fill: true,
+                    backgroundColor: 'rgba(234, 88, 12, 0.2)', // Orange-600 transparent
+                    borderColor: 'rgb(234, 88, 12)',
+                    pointBackgroundColor: 'rgb(234, 88, 12)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(234, 88, 12)'
+                }]
+            };
+
+            const config = {
+                type: 'radar',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: '#e5e7eb' },
+                            grid: { color: '#e5e7eb' },
+                            pointLabels: {
+                                font: { size: 12, family: 'Inter' },
+                                color: '#374151'
+                            },
+                            ticks: { display: false, max: 100 }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            };
+
+            new Chart(ctx, config);
+        });
+
+        // --- Project Filtering Logic ---
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const btns = document.querySelectorAll('.filter-btn');
+
+            // Update Buttons
+            btns.forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.classList.add('bg-gray-900', 'text-white');
+                    btn.classList.remove('bg-white', 'text-gray-600');
+                } else {
+                    btn.classList.remove('bg-gray-900', 'text-white');
+                    btn.classList.add('bg-white', 'text-gray-600');
+                }
+            });
+
+            // Filter Cards
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                    // Add slight fade in animation
+                    card.animate([
+                        { opacity: 0, transform: 'translateY(10px)' },
+                        { opacity: 1, transform: 'translateY(0)' }
+                    ], { duration: 300, fill: 'forwards' });
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // --- Project Tabs (Problem/Solution/Impact) Logic ---
+        function switchTab(btn, tabId) {
+            // Find parent project card
+            const card = btn.closest('.project-card');
+            
+            // 1. Reset buttons in this card
+            const buttons = card.querySelectorAll('button');
+            buttons.forEach(b => {
+                b.classList.remove('bg-white', 'shadow-sm', 'text-gray-900');
+                b.classList.add('text-gray-500');
+            });
+
+            // 2. Activate clicked button
+            btn.classList.remove('text-gray-500');
+            btn.classList.add('bg-white', 'shadow-sm', 'text-gray-900');
+
+            // 3. Hide all tab panes in this card
+            const panes = card.querySelectorAll('.tab-pane');
+            panes.forEach(p => p.classList.add('hidden'));
+
+            // 4. Show target tab pane
+            const target = document.getElementById(tabId);
+            target.classList.remove('hidden');
+            target.classList.add('block');
+        }
+
+        // --- GEMINI AI IMPLEMENTATION ---
+        
+        const apiKey = ""; // API Key injected by environment
+        const resumeContext = `
+        Candidate: Syed Uzair Mohiuddin
+        Role: Data Analyst
+        Experience: 1 Year (Internship + Freelance/Projects)
+        Location: Hyderabad, India
+        Email: syeduzair041@gmail.com
+        GitHub: https://github.com/SyedUzair-SF
+        
+        Summary:
+        Entry-level Data Analyst with hands-on experience in SQL, Python, Excel, and Power BI. Focuses on cleaning structured data, exploratory analysis, and building dashboards.
+        
+        Skills:
+        - Excel: Advanced (Pivot Tables, Power Query, Lookups)
+        - SQL: Advanced (Joins, CTEs, Window Functions)
+        - Power BI: Intermediate (DAX basics, Interactive Dashboards)
+        - Python: Intermediate (Pandas, NumPy, Data Cleaning)
+        - Soft Skills: Problem Solving, Business Communication
+        
+        Projects:
+        1. US Regional Sales Analysis (2024):
+           - Challenge: 5 years of unlinked sales tables.
+           - Tech: Power BI, Python.
+           - Outcome: Identified top 2 SKUs drive 25% revenue. Export channel yields 38% margins. Built self-service dashboard.
+        
+        2. Customer Segmentation Model (2024):
+           - Challenge: Marketing needed better targeting than generic emails.
+           - Tech: PostgreSQL, Stats.
+           - Outcome: Built 3-segment model (Loyal, Returning, New). Found subscribers contribute 45% revenue.
+        
+        Experience:
+        - Data Science Intern (Analytics Projects) at Full Stack Academy (Hyderabad, Jan 2025 - Present):
+          * Analyzed/cleaned structured datasets using SQL/Python.
+          * Performed EDA/validation on sales/customer data.
+          * Wrote SQL queries (joins, aggregations) for ad-hoc questions.
+          * Built Power BI dashboards with KPIs & interactive filters.
+          * Created Excel reports with pivot tables.
+          * Automated recurring reporting.
+        
+        Education:
+        - BE Computer Science, Osmania University (2020-2024)
+        - Google Advanced Data Analytics Certificate (2024)
+        `;
+
+        function toggleAIChat() {
+            const modal = document.getElementById('ai-modal');
+            const backdrop = document.getElementById('ai-backdrop');
+            const panel = document.getElementById('ai-panel');
+            
+            if (modal.classList.contains('hidden')) {
+                // Open
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    backdrop.classList.remove('opacity-0');
+                    panel.classList.remove('translate-y-full');
+                }, 10);
+            } else {
+                // Close
+                backdrop.classList.add('opacity-0');
+                panel.classList.add('translate-y-full');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        function sendQuickMessage(text) {
+            document.getElementById('chat-input').value = text;
+            handleChatSubmit({ preventDefault: () => {} });
+        }
+
+        async function handleChatSubmit(e) {
+            e.preventDefault();
+            const input = document.getElementById('chat-input');
+            const text = input.value.trim();
+            if (!text) return;
+
+            // 1. Add User Message
+            addMessage(text, 'user');
+            input.value = '';
+            
+            // 2. Show Typing Indicator
+            const typingInd = document.getElementById('typing-indicator');
+            typingInd.classList.remove('hidden');
+            scrollToBottom();
+
+            // 3. Call Gemini
+            try {
+                const response = await callGeminiAPI(text);
+                typingInd.classList.add('hidden');
+                addMessage(response, 'ai');
+            } catch (error) {
+                console.error(error);
+                typingInd.classList.add('hidden');
+                addMessage("I'm having trouble connecting right now. Please try again later.", 'ai');
+            }
+        }
+
+        function addMessage(text, sender) {
+            const container = document.getElementById('chat-messages');
+            const div = document.createElement('div');
+            div.className = `flex gap-3 chat-message ${sender === 'user' ? 'flex-row-reverse' : ''}`;
+            
+            const avatar = sender === 'ai' 
+                ? `<div class="w-8 h-8 rounded-full bg-orange-100 flex-shrink-0 flex items-center justify-center text-xs">AI</div>`
+                : `<div class="w-8 h-8 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center text-xs">You</div>`;
+            
+            const bubbleColor = sender === 'ai' 
+                ? 'bg-white border border-gray-200 text-gray-700 rounded-tl-none' 
+                : 'bg-gray-900 text-white rounded-tr-none';
+
+            // Parse Markdown for AI responses
+            const content = sender === 'ai' ? marked.parse(text) : text;
+
+            div.innerHTML = `
+                ${avatar}
+                <div class="${bubbleColor} rounded-2xl p-3 text-sm shadow-sm max-w-[85%] prose prose-sm prose-p:my-1 prose-ul:my-1">
+                    ${content}
+                </div>
+            `;
+            
+            container.appendChild(div);
+            scrollToBottom();
+        }
+
+        function scrollToBottom() {
+            const container = document.getElementById('chat-messages');
+            container.scrollTop = container.scrollHeight;
+        }
+
+        async function callGeminiAPI(userQuery) {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            
+            const systemPrompt = `You are a helpful, professional AI assistant for Syed Uzair Mohiuddin. Your goal is to help recruiters understand Syed's value. 
+            Use the following resume context to answer questions accurately. 
+            If asked to write a cover letter or pitch, use the resume details to make it specific and persuasive. 
+            Keep answers concise (under 3-4 sentences) unless asked for a detailed explanation.
+            
+            RESUME CONTEXT:
+            ${resumeContext}
+            `;
+
+            const payload = {
+                contents: [{
+                    parts: [{ text: userQuery }]
+                }],
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                }
+            };
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                const data = await response.json();
+                if (data.candidates && data.candidates[0].content) {
+                    return data.candidates[0].content.parts[0].text;
+                } else {
+                    return "I couldn't generate a response. Please try again.";
+                }
+            } catch (e) {
+                throw e;
+            }
+        }
+    </script>
+</body>
+</html>
