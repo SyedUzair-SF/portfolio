@@ -3,21 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Syed Uzair Mohiuddin | Data Analyst</title>
+  <title>Syed Uzair Mohiuddin | Data Analyst Portfolio</title>
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
     body { font-family: 'Inter', sans-serif; }
+    .glass {
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.5);
+    }
   </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-[#fdfbf7] text-gray-800">
 
 <!-- NAVBAR -->
-<nav class="bg-white border-b border-gray-200 fixed w-full z-50">
+<nav class="fixed top-0 w-full z-50 glass">
   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <div class="font-bold text-lg">Syed Uzair</div>
-    <div class="space-x-6 text-sm font-medium">
+    <div class="font-bold text-lg">SYED UZAIR MOHIUDDIN</div>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium">
       <a href="#projects" class="hover:text-orange-600">Projects</a>
       <a href="#experience" class="hover:text-orange-600">Experience</a>
       <a href="#contact" class="hover:text-orange-600">Contact</a>
@@ -30,26 +40,29 @@
 </nav>
 
 <!-- HERO -->
-<section class="pt-32 pb-20">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold mb-6">
-      Data Analyst turning data into<br>
-      <span class="text-orange-600">business decisions</span>
+<section class="pt-32 pb-24 relative overflow-hidden">
+  <div class="absolute top-0 right-0 w-96 h-96 bg-orange-100 blur-3xl opacity-60 rounded-full"></div>
+  <div class="absolute bottom-0 left-0 w-80 h-80 bg-blue-100 blur-3xl opacity-60 rounded-full"></div>
+
+  <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+    <h1 class="text-4xl md:text-6xl font-bold mb-6">
+      Data Analyst turning<br>
+      <span class="text-orange-600">data into business decisions</span>
     </h1>
 
     <p class="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
-      Hi, I’m Syed Uzair — a Data Analyst focused on analyzing sales, pricing,
+      Hi, I’m <strong>Syed Uzair Mohiuddin</strong>. I analyze sales, pricing,
       and customer data using SQL, Python, and Power BI to deliver
       decision-ready insights that drive revenue and profitability.
     </p>
 
-    <div class="mt-8 flex justify-center gap-4">
+    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
       <a href="#projects"
-         class="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition">
+         class="px-8 py-3 rounded-xl bg-gray-900 text-white font-semibold hover:bg-gray-800 transition">
         View Projects
       </a>
       <a href="Syed_Uzair_Mohiuddin_Resume.pdf" download
-         class="px-6 py-3 border border-gray-300 rounded-lg hover:border-orange-600 transition">
+         class="px-8 py-3 rounded-xl border border-gray-300 hover:border-orange-600 transition font-semibold">
         Download Resume
       </a>
     </div>
@@ -57,37 +70,32 @@
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="py-20 bg-white">
+<section id="projects" class="py-24 bg-white">
   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold mb-12 text-center">Projects</h2>
+    <h2 class="text-3xl font-bold text-center mb-16">Projects</h2>
 
-    <!-- PROJECT 1 -->
-    <div class="mb-16">
+    <!-- Project 1 -->
+    <div class="glass rounded-2xl p-8 mb-12 shadow-sm">
       <h3 class="text-2xl font-bold mb-4">
         Regional Sales Performance & Profitability Analysis
       </h3>
 
       <p class="mb-4">
         <strong>Business Context:</strong><br>
-        A retail business had 5 years of US sales data but lacked clarity on which
-        regions, products, and channels were driving profitable growth versus
-        creating revenue and margin risk.
+        A retail business lacked clarity on which regions, products, and channels
+        were driving profitable growth across 5 years of US sales data.
       </p>
 
-      <p class="mb-4">
-        <strong>Key Insights:</strong>
-      </p>
       <ul class="list-disc ml-6 mb-4">
         <li>Analyzed 64,000+ transactions across 5 years</li>
         <li>Identified SKU, customer, and geographic concentration risks</li>
-        <li>Revealed pricing as the strongest driver of profit over volume</li>
-        <li>Detected regional revenue with weak margins</li>
+        <li>Revealed pricing as the strongest profit driver over volume</li>
       </ul>
 
-      <p class="mb-4">
+      <p class="mb-2">
         <strong>Business Impact:</strong><br>
-        Enabled pricing optimization, channel focus, and regional investment
-        decisions using interactive Power BI dashboards.
+        Enabled pricing optimization, channel strategy, and regional investment
+        decisions using interactive dashboards.
       </p>
 
       <p class="text-sm text-gray-500">
@@ -95,32 +103,27 @@
       </p>
     </div>
 
-    <!-- PROJECT 2 -->
-    <div>
+    <!-- Project 2 -->
+    <div class="glass rounded-2xl p-8 shadow-sm">
       <h3 class="text-2xl font-bold mb-4">
         Customer Shopping Behavior & Segmentation Analysis
       </h3>
 
       <p class="mb-4">
         <strong>Business Context:</strong><br>
-        An e-commerce business needed to understand customer purchasing behavior
-        to improve retention, target high-value users, and optimize promotions.
+        An e-commerce business needed to understand customer behavior to improve
+        retention and target high-value customers.
       </p>
 
-      <p class="mb-4">
-        <strong>Key Insights:</strong>
-      </p>
       <ul class="list-disc ml-6 mb-4">
         <li>Analyzed 3,900 customer transactions</li>
-        <li>Segmented users into New, Returning, and Loyal customers</li>
-        <li>Repeat customers contributed the majority of revenue</li>
-        <li>Express shipping and subscribers had higher spend</li>
+        <li>Segmented customers into New, Returning, and Loyal groups</li>
+        <li>Identified repeat buyers as primary revenue contributors</li>
       </ul>
 
-      <p class="mb-4">
+      <p class="mb-2">
         <strong>Business Impact:</strong><br>
-        Supported targeted marketing, retention strategy, and pricing decisions
-        based on customer value.
+        Supported targeted promotions, pricing strategy, and customer retention.
       </p>
 
       <p class="text-sm text-gray-500">
@@ -131,11 +134,11 @@
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience" class="py-20 bg-gray-50">
+<section id="experience" class="py-24 bg-gray-50">
   <div class="max-w-4xl mx-auto px-6">
-    <h2 class="text-3xl font-bold mb-10 text-center">Experience</h2>
+    <h2 class="text-3xl font-bold text-center mb-12">Experience</h2>
 
-    <div class="bg-white p-8 rounded-xl shadow-sm border">
+    <div class="glass rounded-2xl p-8">
       <h3 class="text-xl font-bold">
         Data Analyst – Analytics Projects (Project-Based Internship)
       </h3>
@@ -144,36 +147,28 @@
       </p>
 
       <ul class="list-disc ml-6 space-y-2">
-        <li>Analyzed large datasets (50k–200k rows) using SQL and Python</li>
-        <li>Used CTEs and aggregations to derive revenue, growth, and retention insights</li>
-        <li>Cleaned and validated data, reducing inconsistencies by ~30%</li>
-        <li>Built Power BI dashboards for revenue and customer analysis</li>
-        <li>Automated recurring Excel and SQL reports, reducing manual effort by ~40%</li>
+        <li>Analyzed datasets (50k–200k rows) using SQL and Python</li>
+        <li>Derived revenue, growth, and retention insights using CTEs</li>
+        <li>Reduced data inconsistencies by ~30%</li>
+        <li>Built Power BI dashboards for business review</li>
+        <li>Automated recurring reports, reducing manual effort by ~40%</li>
       </ul>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="py-16 bg-gray-900 text-white">
+<section id="contact" class="py-20 bg-gray-900 text-white">
   <div class="max-w-4xl mx-auto px-6 text-center">
     <h2 class="text-2xl font-bold mb-4">Let’s connect</h2>
-    <p class="mb-6 text-gray-300">
+    <p class="text-gray-300 mb-6">
       Interested in how my work can support business decisions?
     </p>
 
-    <div class="space-x-6">
-      <a href="mailto:syeduzair041@gmail.com" class="hover:text-orange-400">
-        Email
-      </a>
-      <a href="https://linkedin.com/in/syed-uzair-mohiuddin" target="_blank"
-         class="hover:text-orange-400">
-        LinkedIn
-      </a>
-      <a href="https://github.com/SyedUzair-SF" target="_blank"
-         class="hover:text-orange-400">
-        GitHub
-      </a>
+    <div class="flex justify-center gap-6">
+      <a href="mailto:syeduzair041@gmail.com" class="hover:text-orange-400">Email</a>
+      <a href="https://linkedin.com/in/syed-uzair-mohiuddin" target="_blank" class="hover:text-orange-400">LinkedIn</a>
+      <a href="https://github.com/SyedUzair-SF" target="_blank" class="hover:text-orange-400">GitHub</a>
     </div>
   </div>
 </section>
