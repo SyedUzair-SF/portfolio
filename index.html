@@ -8,15 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .glass-panel { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
-        .nav-active { color: #ea580c; font-weight: 700; }
+        .glass-panel { background: rgba(255, 255, 255, 0.98); border-bottom: 1px solid #e5e7eb; }
+        /* Smooth scrolling */
         html { scroll-behavior: smooth; }
-        .project-section-header { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; color: #ea580c; margin-bottom: 0.5rem; display: block; }
-        .bullet-list { list-style-type: disc; padding-left: 1.2rem; margin-bottom: 1.5rem; color: #4b5563; }
-        .bullet-list li { margin-bottom: 0.25rem; }
+        .project-header { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; color: #4b5563; margin-bottom: 0.5rem; display: block; }
+        .bullet-list { list-style-type: disc; padding-left: 1.2rem; color: #374151; font-size: 0.95rem; line-height: 1.6; }
+        .bullet-list li { margin-bottom: 0.5rem; }
     </style>
 </head>
-<body class="bg-[#f8f9fa] text-gray-800 antialiased selection:bg-orange-100 selection:text-orange-800">
+<body class="bg-[#f9fafb] text-gray-900 antialiased">
 
     <nav class="fixed top-0 w-full z-50 glass-panel">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,13 +25,12 @@
                     <span class="font-bold text-xl tracking-tight text-gray-900">SU<span class="text-orange-600">.</span></span>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <button onclick="scrollToSection('hero')" class="nav-item nav-active text-sm hover:text-orange-600 transition-colors">Home</button>
-                    <button onclick="scrollToSection('projects')" class="nav-item text-gray-500 text-sm hover:text-orange-600 transition-colors">Case Studies</button>
-                    <button onclick="scrollToSection('skills')" class="nav-item text-gray-500 text-sm hover:text-orange-600 transition-colors">Skills</button>
-                    <button onclick="scrollToSection('experience')" class="nav-item text-gray-500 text-sm hover:text-orange-600 transition-colors">Experience</button>
+                    <button onclick="scrollToSection('hero')" class="text-sm font-medium text-gray-600 hover:text-orange-600 transition-colors">Home</button>
+                    <button onclick="scrollToSection('projects')" class="text-sm font-medium text-gray-600 hover:text-orange-600 transition-colors">Case Studies</button>
+                    <button onclick="scrollToSection('experience')" class="text-sm font-medium text-gray-600 hover:text-orange-600 transition-colors">Experience</button>
                 </div>
-                <div class="flex items-center gap-4">
-                    <a href="https://linkedin.com/in/syed-uzair-mohiuddin" target="_blank" class="bg-gray-900 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors shadow-lg">Connect</a>
+                <div>
+                    <a href="https://linkedin.com/in/syed-uzair-mohiuddin" target="_blank" class="bg-gray-900 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors">Connect</a>
                 </div>
             </div>
         </div>
@@ -39,223 +38,174 @@
 
     <main class="pt-24 pb-12">
 
-        <section id="hero" class="min-h-[85vh] flex flex-col justify-center">
+        <section id="hero" class="min-h-[80vh] flex flex-col justify-center">
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 mb-8 leading-tight">
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-8 leading-tight">
                     Hi, I’m Syed Uzair Mohiuddin.
                 </h1>
                 
                 <div class="prose prose-lg mx-auto text-gray-600 text-left md:text-center leading-relaxed space-y-6">
-                    <p class="text-xl md:text-2xl font-medium text-gray-800">
-                        I am a Data Analyst focused on turning raw data into clear business insights.
+                    <p class="text-xl font-medium text-gray-800">
+                        I am a Data Analyst focused on turning sales and customer data into clear, decision-ready business insights.
                     </p>
                     <p>
-                        I work with <span class="font-semibold text-gray-900">SQL, Python, and Power BI</span> to analyze sales, pricing, and customer data, helping businesses understand revenue drivers, profitability, and customer behavior.
+                        I work with <strong>SQL, Python, and Power BI</strong> to analyze revenue, pricing, and customer behavior, helping teams understand what drives profit, where risks exist, and how decisions can be improved using data.
                     </p>
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-left inline-block w-full">
-                        <p class="font-bold text-gray-900 mb-3">My projects focus on real-world business questions such as:</p>
-                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                            <li>What is driving revenue and profit?</li>
-                            <li>Where are pricing and cost risks?</li>
-                            <li>Which customers, products, or regions matter most?</li>
-                        </ul>
-                    </div>
-                    <p class="text-sm text-gray-500 mt-4">
-                        Below are selected analytics projects demonstrating end-to-end analysis and decision-ready dashboards.
+                    <p class="text-sm text-gray-500 mt-4 border-t border-gray-200 pt-6 inline-block">
+                        Below are selected analytics projects demonstrating end-to-end analysis, business insights, and interactive dashboards.
                     </p>
                 </div>
 
-                <div class="mt-10 flex justify-center">
-                    <button onclick="scrollToSection('projects')" class="animate-bounce bg-white p-3 rounded-full shadow-md border border-gray-200 text-orange-600">
+                <div class="mt-12 flex justify-center">
+                    <button onclick="scrollToSection('projects')" class="animate-bounce p-2 rounded-full text-gray-400 hover:text-orange-600 transition-colors">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
                     </button>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="py-20 bg-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold text-gray-900">Selected Case Studies</h2>
-                    <p class="mt-4 text-gray-600">Focus: Revenue Analysis, Customer Segmentation, and Profitability</p>
-                </div>
+        <section id="projects" class="py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+                
+                <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-200">
+                    <div class="mb-8 border-b border-gray-100 pb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Regional Sales Performance & Profitability Analysis</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-700 text-xs font-mono px-3 py-1.5 rounded">SQL (PostgreSQL)</span>
+                            <span class="bg-gray-100 text-gray-700 text-xs font-mono px-3 py-1.5 rounded">Python (Pandas)</span>
+                            <span class="bg-gray-100 text-gray-700 text-xs font-mono px-3 py-1.5 rounded">Power BI</span>
+                        </div>
+                    </div>
 
-                <div class="space-y-16"> 
-
-                    <div class="group relative bg-white rounded-3xl p-8 md:p-10 shadow-sm border border-gray-200 hover:shadow-xl transition-all duration-300">
-                        <div class="mb-6">
-                            <h3 class="text-2xl font-bold text-gray-900">Regional Sales Performance & Profitability Analysis</h3>
-                            <div class="flex gap-2 mt-3">
-                                <span class="bg-gray-100 text-gray-700 text-xs font-mono px-2 py-1 rounded">SQL (PostgreSQL)</span>
-                                <span class="bg-gray-100 text-gray-700 text-xs font-mono px-2 py-1 rounded">Python (Pandas)</span>
-                                <span class="bg-gray-100 text-gray-700 text-xs font-mono px-2 py-1 rounded">Power BI</span>
-                            </div>
+                    <div class="space-y-8">
+                        <div>
+                            <span class="project-header">Business Context</span>
+                            <p class="text-gray-700 leading-relaxed">
+                                A retail business had 5 years of historical US sales data but lacked clarity on which regions, products, and sales channels were driving profitable growth versus creating revenue and margin risk.
+                            </p>
                         </div>
 
-                        <div class="grid md:grid-cols-1 gap-6">
+                        <div class="grid md:grid-cols-2 gap-8">
                             <div>
-                                <span class="project-section-header">Business Context</span>
-                                <p class="text-gray-700 mb-6 leading-relaxed">
-                                    A retail business had 5 years of US sales data but lacked clarity on which regions, products, and channels were driving profitable growth versus creating risk.
-                                </p>
+                                <span class="project-header">Key Business Questions</span>
+                                <ul class="bullet-list text-sm">
+                                    <li>Which regions and states contribute most to revenue and profit?</li>
+                                    <li>Is revenue concentrated in a small set of products or customers?</li>
+                                    <li>Which channels maximize volume vs. profitability?</li>
+                                    <li>Is pricing or volume the primary driver of profit?</li>
+                                </ul>
                             </div>
-
-                            <div class="grid md:grid-cols-2 gap-8">
-                                <div>
-                                    <span class="project-section-header">Key Questions</span>
-                                    <ul class="bullet-list text-sm">
-                                        <li>Which regions and states contribute most to revenue and profit?</li>
-                                        <li>Is revenue concentrated in a small set of products or customers?</li>
-                                        <li>Which channels maximize volume vs. profitability?</li>
-                                        <li>Is pricing or volume the primary profit driver?</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <span class="project-section-header">Key Insights</span>
-                                    <ul class="bullet-list text-sm">
-                                        <li><strong>64,000+ transactions</strong> revealed strong revenue concentration across a small number of SKUs.</li>
-                                        <li>Pricing showed the strongest correlation with profit and revenue, outperforming volume.</li>
-                                        <li>Certain regions generated high revenue but weaker margins, indicating cost or pricing issues.</li>
-                                        <li>Clear seasonality patterns impacted revenue stability and planning.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="bg-orange-50 p-6 rounded-xl border border-orange-100">
-                                <span class="project-section-header text-orange-700">Business Impact</span>
-                                <ul class="list-none space-y-2">
-                                    <li class="flex items-start gap-2">
-                                        <svg class="w-5 h-5 text-orange-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                        <span class="text-gray-800 text-sm font-medium">Highlighted pricing as the primary lever for profit improvement.</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <svg class="w-5 h-5 text-orange-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                        <span class="text-gray-800 text-sm font-medium">Identified SKU, customer, and geographic concentration risks.</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <svg class="w-5 h-5 text-orange-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                        <span class="text-gray-800 text-sm font-medium">Enabled data-driven decisions for pricing, channel strategy, and regional investment.</span>
-                                    </li>
+                            <div>
+                                <span class="project-header">Key Insights</span>
+                                <ul class="bullet-list text-sm">
+                                    <li>Analysis of <strong>64,000+ transactions</strong> revealed strong revenue concentration across a small number of SKUs, creating dependency risk.</li>
+                                    <li>Pricing showed the strongest correlation with both revenue and profit, outperforming volume-based strategies.</li>
+                                    <li>Certain regions generated high revenue but weaker margins, indicating pricing or cost inefficiencies.</li>
                                 </ul>
                             </div>
                         </div>
+
+                        <div class="bg-orange-50/50 p-6 rounded-xl border border-orange-100">
+                            <span class="project-header text-orange-800">Business Impact</span>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-800 text-sm font-medium">
+                                <li>Identified pricing as the primary lever for profit improvement.</li>
+                                <li>Highlighted SKU, customer, and geographic concentration risks.</li>
+                                <li>Enabled data-driven decisions for pricing strategy, channel focus, and regional investment.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-200">
+                    <div class="mb-8 border-b border-gray-100 pb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Customer Shopping Behavior & Segmentation Analysis</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-700 text-xs font-mono px-3 py-1.5 rounded">SQL (PostgreSQL)</span>
+                            <span class="bg-gray-100 text-gray-700 text-xs font-mono px-3 py-1.5 rounded">Python (Pandas)</span>
+                            <span class="bg-gray-100 text-gray-700 text-xs font-mono px-3 py-1.5 rounded">Power BI</span>
+                        </div>
                     </div>
 
-                    <div class="group relative bg-white rounded-3xl p-8 md:p-10 shadow-sm border border-gray-200 hover:shadow-xl transition-all duration-300">
-                        <div class="mb-6">
-                            <h3 class="text-2xl font-bold text-gray-900">Customer Shopping Behavior & Segmentation Analysis</h3>
-                            <div class="flex gap-2 mt-3">
-                                <span class="bg-gray-100 text-gray-700 text-xs font-mono px-2 py-1 rounded">SQL (PostgreSQL)</span>
-                                <span class="bg-gray-100 text-gray-700 text-xs font-mono px-2 py-1 rounded">Python (Pandas)</span>
-                                <span class="bg-gray-100 text-gray-700 text-xs font-mono px-2 py-1 rounded">Power BI</span>
-                            </div>
+                    <div class="space-y-8">
+                        <div>
+                            <span class="project-header">Business Context</span>
+                            <p class="text-gray-700 leading-relaxed">
+                                An e-commerce business needed to better understand customer purchasing behavior to improve retention, identify high-value customers, and optimize promotional and pricing strategies.
+                            </p>
                         </div>
 
-                        <div class="grid md:grid-cols-1 gap-6">
+                        <div class="grid md:grid-cols-2 gap-8">
                             <div>
-                                <span class="project-section-header">Business Context</span>
-                                <p class="text-gray-700 mb-6 leading-relaxed">
-                                    An e-commerce business needed to better understand customer behavior to improve retention, target high-value customers, and optimize promotional strategy.
-                                </p>
+                                <span class="project-header">Key Business Questions</span>
+                                <ul class="bullet-list text-sm">
+                                    <li>Who are the highest-value customers?</li>
+                                    <li>How does purchase frequency impact revenue?</li>
+                                    <li>Do shipping preferences and subscriptions affect spending behavior?</li>
+                                </ul>
                             </div>
-
-                            <div class="grid md:grid-cols-2 gap-8">
-                                <div>
-                                    <span class="project-section-header">Key Questions</span>
-                                    <ul class="bullet-list text-sm">
-                                        <li>Who are the highest-value customers?</li>
-                                        <li>How does purchase frequency impact revenue?</li>
-                                        <li>Do shipping choices and subscriptions affect spending?</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <span class="project-section-header">Key Insights</span>
-                                    <ul class="bullet-list text-sm">
-                                        <li>Repeat and loyal customers were the primary contributors to total revenue.</li>
-                                        <li>Express shipping users showed higher average purchase values.</li>
-                                        <li>Subscribers consistently spent more than non-subscribers.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                                <span class="project-section-header text-blue-700">Business Impact</span>
-                                <ul class="list-none space-y-2">
-                                    <li class="flex items-start gap-2">
-                                        <svg class="w-5 h-5 text-blue-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                        <span class="text-gray-800 text-sm font-medium">Supported targeted promotions for high-value customer segments.</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <svg class="w-5 h-5 text-blue-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                        <span class="text-gray-800 text-sm font-medium">Informed subscription and shipping-based pricing strategies.</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <svg class="w-5 h-5 text-blue-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                        <span class="text-gray-800 text-sm font-medium">Improved understanding of customer lifetime value drivers.</span>
-                                    </li>
+                            <div>
+                                <span class="project-header">Key Insights</span>
+                                <ul class="bullet-list text-sm">
+                                    <li>Repeat and loyal customers were the primary contributors to total revenue.</li>
+                                    <li>Express shipping users showed higher average purchase values.</li>
+                                    <li>Subscribers consistently spent more than non-subscribers.</li>
                                 </ul>
                             </div>
                         </div>
-                    </div>
 
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="py-16 bg-[#f8f9fa] border-t border-gray-200">
-            <div class="max-w-4xl mx-auto px-4 text-center">
-                <h2 class="text-2xl font-bold text-gray-900 mb-8">Technical Toolkit</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-                        <div class="font-bold text-gray-900">Python</div>
-                        <div class="text-xs text-gray-500">Pandas, NumPy, Analysis</div>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-                        <div class="font-bold text-gray-900">SQL</div>
-                        <div class="text-xs text-gray-500">PostgreSQL, Joins, CTEs</div>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-                        <div class="font-bold text-gray-900">Power BI</div>
-                        <div class="text-xs text-gray-500">DAX, Data Modeling</div>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-                        <div class="font-bold text-gray-900">Excel</div>
-                        <div class="text-xs text-gray-500">Pivot Tables, Automation</div>
+                        <div class="bg-blue-50/50 p-6 rounded-xl border border-blue-100">
+                            <span class="project-header text-blue-800">Business Impact</span>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-800 text-sm font-medium">
+                                <li>Supported targeted promotions for high-value customer segments.</li>
+                                <li>Informed subscription-based and shipping-based pricing strategies.</li>
+                                <li>Improved understanding of customer lifetime value drivers.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
         <section id="experience" class="py-20 bg-white border-t border-gray-200">
             <div class="max-w-3xl mx-auto px-4">
-                <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Experience</h2>
-                <div class="border-l-2 border-orange-100 ml-4 pl-8 relative pb-12">
-                     <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-orange-500 border-4 border-white shadow"></div>
-                     <h3 class="text-xl font-bold text-gray-900">Data Analytics Intern (Analytics Projects)</h3>
-                     <div class="text-orange-600 font-medium text-sm mb-4">Full Stack Academy | Oct 2025 – Dec 2025</div>
-                     <ul class="list-disc ml-4 text-gray-600 text-sm space-y-2">
-                        <li>Analyzed 50k-200k record datasets using SQL and Python to support reporting.</li>
-                        <li>Cleaned and validated raw data, reducing inconsistencies by ~30%.</li>
-                        <li>Built interactive Power BI dashboards for KPI tracking (revenue, growth).</li>
-                        <li>Automated recurring reports, reducing manual effort by ~40%.</li>
-                     </ul>
+                <h2 class="text-2xl font-bold text-gray-900 mb-12 text-center">Experience</h2>
+                
+                <div class="relative border-l-2 border-gray-200 ml-4 space-y-12">
+                    <div class="relative pl-8">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-orange-600 border-4 border-white shadow-sm"></div>
+                        <h3 class="text-lg font-bold text-gray-900">Data Analyst – Analytics Projects (Project-Based Internship)</h3>
+                        <div class="text-sm font-semibold text-gray-500 mb-4">Full Stack Academy | Hyderabad | 10/2025 – 12/2025</div>
+                        
+                        <ul class="bullet-list">
+                            [cite_start]<li>Analyzed large structured datasets (50k–200k rows) using SQL and Python to support sales and customer analysis[cite: 259].</li>
+                            [cite_start]<li>Built complex SQL queries (CTEs, joins, aggregations) to answer revenue, growth, and customer retention questions[cite: 259].</li>
+                            [cite_start]<li>Cleaned and validated raw data, reducing inconsistencies and missing values by ~30%[cite: 260].</li>
+                            [cite_start]<li>Developed interactive Power BI dashboards tracking KPIs such as revenue, regional performance, and customer behavior[cite: 261].</li>
+                            [cite_start]<li>Automated recurring Excel and SQL reports, reducing manual reporting effort by ~40%[cite: 261].</li>
+                        </ul>
+                    </div>
+
+                    <div class="relative pl-8">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-gray-300 border-4 border-white"></div>
+                        <h3 class="text-lg font-bold text-gray-900">Bachelor of Engineering in Computer Science (Data Science)</h3>
+                        <div class="text-sm font-semibold text-gray-500">Osmania University | [cite_start]2020 - 2024 [cite: 276]</div>
+                    </div>
                 </div>
-                <div class="border-l-2 border-orange-100 ml-4 pl-8 relative">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-300 border-4 border-white"></div>
-                    <h3 class="text-xl font-bold text-gray-900">B.E. in Computer Science (Data Science)</h3>
-                    <div class="text-gray-500 font-medium text-sm">Osmania University | 2020 - 2024</div>
-               </div>
             </div>
         </section>
 
-        <footer class="bg-gray-900 text-white py-16">
-            <div class="max-w-4xl mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold mb-6">Interested in how these insights can support business decisions?</h2>
-                <div class="flex justify-center gap-6 mb-8">
-                    <a href="Syed_Uzair_Mohiuddin_Resume.pdf" target="_blank" class="text-orange-400 hover:text-white underline underline-offset-4 decoration-orange-400/30 hover:decoration-white transition">View Resume PDF</a>
-                    <span class="text-gray-600">|</span>
-                    <a href="https://linkedin.com/in/syed-uzair-mohiuddin" target="_blank" class="text-orange-400 hover:text-white underline underline-offset-4 decoration-orange-400/30 hover:decoration-white transition">Connect on LinkedIn</a>
+        <footer class="bg-gray-900 text-white py-20">
+            <div class="max-w-3xl mx-auto px-4 text-center">
+                <h2 class="text-2xl font-bold mb-8">Interested in how these insights support business decisions?</h2>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                    <a href="Syed_Uzair_Mohiuddin_Resume.pdf" target="_blank" class="px-6 py-3 bg-white text-gray-900 rounded-lg font-medium hover:bg-orange-50 transition-colors">
+                        View Resume PDF
+                    </a>
+                    <a href="https://linkedin.com/in/syed-uzair-mohiuddin" target="_blank" class="px-6 py-3 border border-gray-700 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors">
+                        Connect on LinkedIn
+                    </a>
                 </div>
                 <p class="text-gray-500 text-sm mt-12">© 2026 Syed Uzair Mohiuddin</p>
             </div>
