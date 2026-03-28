@@ -1,83 +1,254 @@
-```html
-<!-- ONLY CHANGES APPLIED: content + accuracy + consistency -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Syed Uzair Mohiuddin | Data Analyst Portfolio</title>
 
-<!-- HERO TEXT FIX -->
-<h1 class="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-6">
-    Data Insights that <br> <span class="text-orange-600">Drive Decisions.</span>
-</h1>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-    Hi, I'm <span class="font-semibold text-gray-900">Syed Uzair Mohiuddin</span>. 
-    I analyze large datasets (60K–100K+ records) to uncover revenue drivers, pricing impact, and customer behavior using SQL, Python, and Power BI.
-</p>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- QUICK STATS FIX -->
-<div class="text-3xl font-bold text-gray-900">SQL / Python</div>
-<div class="text-sm text-gray-500">Data Analysis Stack</div>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    /* Glassmorphism Effect */
+    .glass {
+      background: rgba(255, 255, 255, 0.70);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+    .glass-card {
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+        background: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        transform: translateY(-2px);
+    }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
 
-<div class="text-3xl font-bold text-gray-900">Power BI</div>
-<div class="text-sm text-gray-500">Dashboarding</div>
+<body class="bg-[#fdfbf7] text-gray-800 antialiased selection:bg-orange-100 selection:text-orange-900">
 
-<div class="text-3xl font-bold text-gray-900">Project-Based</div>
-<div class="text-sm text-gray-500">Analytics Experience</div>
+<nav class="fixed top-0 w-full z-50 glass border-b border-white/40">
+  <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
+    <div class="font-bold text-lg tracking-tight text-gray-900">SYED UZAIR MOHIUDDIN<span class="text-orange-600">.</span></div>
+    
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+      <a href="#projects" class="hover:text-orange-600 transition-colors">Case Studies</a>
+      <a href="#experience" class="hover:text-orange-600 transition-colors">Experience</a>
+      <a href="#contact" class="hover:text-orange-600 transition-colors">Contact</a>
+      <a href="Syed_Uzair_Mohiuddin_Resume.pdf" target="_blank"
+         class="bg-gray-900 text-white px-5 py-2.5 rounded-lg hover:bg-orange-600 transition-all shadow-md">
+        Download Resume
+      </a>
+    </div>
+  </div>
+</nav>
 
-<div class="text-3xl font-bold text-gray-900">2 Major</div>
-<div class="text-sm text-gray-500">Case Studies</div>
+<section class="pt-40 pb-32 relative overflow-hidden">
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-200/40 blur-[100px] rounded-full mix-blend-multiply pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-200/40 blur-[100px] rounded-full mix-blend-multiply pointer-events-none"></div>
 
-<!-- PROJECT 1 FIX (MATCH RESUME EXACTLY) -->
-<h3 class="text-2xl font-bold text-gray-900 mb-2">Revenue & Pricing Optimization Analysis</h3>
+  <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+    <h1 class="text-5xl md:text-7xl font-bold mb-8 text-gray-900 leading-tight">
+      Data Analyst turning<br>
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600">data into decisions.</span>
+    </h1>
 
-<p class="text-sm text-gray-600">
-<strong>Challenge:</strong> Business had stable sales but inconsistent profitability with no clarity on whether pricing or volume was driving margins.
-</p>
+    <p class="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-10">
+      Hi, I’m <strong>Syed Uzair Mohiuddin</strong>. I am a Data Analyst experienced in analyzing 60K-100K+ records using 
+      <span class="font-semibold text-gray-800">SQL, Python, and Power BI</span> to uncover revenue drivers, pricing impact, and customer behavior, delivering insights that improve reporting efficiency.
+    </p>
 
-<p class="text-sm text-gray-600">
-<strong>Action:</strong> Analyzed 64K+ transactions using SQL and Python, performed correlation analysis to evaluate pricing vs profitability, and built KPI framework.
-</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a href="#projects"
+         class="px-8 py-3.5 rounded-xl bg-gray-900 text-white font-semibold hover:bg-orange-600 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+        View Case Studies
+      </a>
+      <a href="Syed_Uzair_Mohiuddin_Resume.pdf" target="_blank"
+         class="px-8 py-3.5 rounded-xl bg-white border border-gray-200 text-gray-700 font-semibold hover:border-orange-200 hover:bg-orange-50 transition-all shadow-sm">
+        View Resume PDF
+      </a>
+    </div>
+  </div>
+</section>
 
-<p class="text-sm text-gray-600">
-<strong>Impact:</strong><br>
-• Identified pricing as primary profit lever<br>
-• Potential margin improvement of <span class="text-orange-600 font-bold">~8–12%</span><br>
-• Detected margin leakage from discount-heavy products<br>
-• Enabled pricing-focused decision-making
-</p>
+<section id="projects" class="py-24 relative">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-900">Selected Projects</h2>
+        <p class="text-gray-500 mt-2">Focus: Revenue Analysis, Profitability, and Segmentation</p>
+    </div>
 
-<!-- PROJECT 2 FIX -->
-<h3 class="text-2xl font-bold text-gray-900 mb-2">Customer Behavior & Revenue Segmentation</h3>
+    <div class="glass-card rounded-3xl p-8 md:p-12 mb-12">
+      <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6 gap-4">
+          <div>
+            <div class="text-orange-600 font-bold text-xs tracking-wider uppercase mb-2">Retail Analytics</div>
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-900">Regional Sales Performance & Profitability Analysis</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 font-mono text-sm">
+            <span class="bg-gray-100/80 text-gray-700 px-3 py-1.5 rounded-md">SQL (PostgreSQL)</span>
+            <span class="bg-gray-100/80 text-gray-700 px-3 py-1.5 rounded-md">Python (Pandas)</span>
+            <span class="bg-blue-50/80 text-blue-700 px-3 py-1.5 rounded-md">Power BI</span>
+          </div>
+      </div>
 
-<p class="text-sm text-gray-600">
-<strong>Challenge:</strong> Lack of visibility into customer segments and their contribution to revenue.
-</p>
+      <div class="space-y-6 text-gray-600">
+        <div>
+            <h4 class="font-semibold text-gray-900 mb-2">Business Context</h4>
+            <p>A retail business had 5 years of sales data but lacked clarity on which regions, products, and channels were driving profitable growth versus creating margin leakage.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Key Insights</h4>
+                <ul class="list-disc ml-5 space-y-1 text-sm">
+                    <li>Analyzed <strong>64K+ transactions</strong> across 5 years to identify key revenue and margin drivers.</li>
+                    <li>Performed correlation analysis to evaluate the relationship between pricing and profitability.</li>
+                    <li>Detected margin leakage from high-discount products and regional pricing inefficiencies.</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Business Impact</h4>
+                <ul class="list-disc ml-5 space-y-1 text-sm">
+                    <li>Identified pricing as primary profit lever, with potential to improve margins by <strong>~8-12%</strong>.</li>
+                    <li>Built Power BI dashboard tracking revenue, margin %, and pricing impact.</li>
+                    <li>Enabled identification of pricing inefficiencies and margin leakage.</li>
+                </ul>
+            </div>
+        </div>
 
-<p class="text-sm text-gray-600">
-<strong>Action:</strong> Analyzed 3.9K+ transactions using SQL and Python to segment customers and evaluate purchasing behavior.
-</p>
+        <div class="mt-8 pt-6 border-t border-gray-200/60 flex flex-wrap gap-4">
+          <a href="https://github.com/SyedUzair-SF/regional-sales-performance-profitability-analysis"
+             target="_blank"
+             class="px-5 py-2.5 bg-[#111827] text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition-all shadow-sm flex items-center gap-2">
+             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+             View Code on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
 
-<p class="text-sm text-gray-600">
-<strong>Impact:</strong><br>
-• Identified repeat customers as primary revenue drivers<br>
-• Found higher AOV among express shipping users and subscribers<br>
-• Enabled targeted retention and promotion strategies
-</p>
+    <div class="glass-card rounded-3xl p-8 md:p-12">
+      <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6 gap-4">
+          <div>
+            <div class="text-blue-600 font-bold text-xs tracking-wider uppercase mb-2">Customer Behavior</div>
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-900">Customer Shopping Behavior & Segmentation Analysis</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 font-mono text-sm">
+            <span class="bg-gray-100/80 text-gray-700 px-3 py-1.5 rounded-md">SQL (PostgreSQL)</span>
+            <span class="bg-gray-100/80 text-gray-700 px-3 py-1.5 rounded-md">Python (Pandas)</span>
+            <span class="bg-blue-50/80 text-blue-700 px-3 py-1.5 rounded-md">Power BI</span>
+          </div>
+      </div>
 
-<!-- EXPERIENCE FIX -->
-<h3 class="text-xl font-bold text-gray-900">Data Analyst Intern (Project-Based)</h3>
+      <div class="space-y-6 text-gray-600">
+        <div>
+            <h4 class="font-semibold text-gray-900 mb-2">Business Context</h4>
+            <p>An e-commerce business needed to better understand customer behavior to improve retention, target high-value users, and optimize promotions.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Key Insights</h4>
+                <ul class="list-disc ml-5 space-y-1 text-sm">
+                    <li>Analyzed <strong>3.9K+ transactions</strong> to identify purchasing patterns and revenue distribution.</li>
+                    <li>Discovered higher <strong>AOV</strong> among express shipping users and subscribers.</li>
+                    <li>Identified repeat customers as primary revenue drivers.</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Business Impact</h4>
+                <ul class="list-disc ml-5 space-y-1 text-sm">
+                    <li>Supported retention strategies based on primary revenue drivers.</li>
+                    <li>Built dashboard to track and analyze customer segments and revenue trends.</li>
+                    <li>Informed shipping and subscription-based promotional strategies.</li>
+                </ul>
+            </div>
+        </div>
 
-<div class="text-orange-600 font-semibold mb-2">
-Full Stack Academy | Hyderabad | Jan 2025 – May 2025
-</div>
+        <div class="mt-8 pt-6 border-t border-gray-200/60 flex flex-wrap gap-4">
+          <a href="https://github.com/SyedUzair-SF/customer-shopping-behavior-segmentation-analysis"
+             target="_blank"
+             class="px-5 py-2.5 bg-[#111827] text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition-all shadow-sm flex items-center gap-2">
+             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+             View Code on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
 
-<ul>
-<li>Analyzed datasets (50K–200K rows) to answer business questions on revenue and retention</li>
-<li>Built advanced SQL queries (CTEs, joins, aggregations, window functions)</li>
-<li>Cleaned and validated data, reducing inconsistencies by ~30%</li>
-<li>Built Power BI dashboards enabling tracking of revenue and customer KPIs</li>
-<li>Automated reporting processes, reducing manual effort by ~40%</li>
-</ul>
+  </div>
+</section>
 
-<!-- SKILLS TEXT FIX -->
-<p class="text-gray-600 mb-6 text-lg">
-Strong foundation in SQL, Python, and Power BI with focus on data cleaning, exploratory analysis, KPI tracking, and business insight generation.
-</p>
-```
+<section id="experience" class="py-24 bg-white/50">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-16 text-gray-900">Experience</h2>
+
+    <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
+      <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-orange-500 to-orange-600"></div>
+      
+      <div class="relative pl-4">
+          <h3 class="text-xl md:text-2xl font-bold text-gray-900">
+            Data Analyst Intern (Project-Based)
+          </h3>
+          <div class="text-orange-600 font-medium mb-6 mt-1">
+            Full Stack Academy | Hyderabad | 01/2025 – 05/2025
+          </div>
+
+          <ul class="space-y-3 text-gray-700 leading-relaxed">
+            <li class="flex items-start gap-3">
+                <span class="mt-1.5 w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0"></span>
+                <span>Analyzed datasets (50K-200K rows) to answer business questions on revenue and retention.</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="mt-1.5 w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0"></span>
+                <span>Built advanced SQL queries (CTEs, joins, aggregations, window functions) for insight extraction.</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="mt-1.5 w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0"></span>
+                <span>Cleaned and validated data, reducing inconsistencies by <strong>~30%</strong>.</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="mt-1.5 w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0"></span>
+                <span>Built Power BI dashboards enabling tracking of revenue and customer KPIs, improving visibility into performance trends and decision-making.</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="mt-1.5 w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0"></span>
+                <span>Automated reports using SQL & Excel, reducing manual effort by <strong>~40%</strong>.</span>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="py-20 bg-gray-900 text-white">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6">Let’s connect</h2>
+    <p class="text-gray-400 mb-8 text-lg">
+      Interested in how these insights can support your business decisions?
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold tracking-wide">
+      <a href="mailto:syeduzair041@gmail.com" class="hover:text-orange-400 transition-colors">EMAIL</a>
+      <span class="text-gray-700">/</span>
+      <a href="https://linkedin.com/in/syed-uzair-mohiuddin" target="_blank" class="hover:text-orange-400 transition-colors">LINKEDIN</a>
+      <span class="text-gray-700">/</span>
+      <a href="https://github.com/SyedUzair-SF" target="_blank" class="hover:text-orange-400 transition-colors">GITHUB</a>
+    </div>
+    
+    <div class="mt-12 text-gray-600 text-xs">
+        © 2026 Syed Uzair Mohiuddin. All rights reserved.
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
