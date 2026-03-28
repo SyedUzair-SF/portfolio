@@ -5,144 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syed Uzair Mohiuddin | Data Analyst Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .glass-panel { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .glass {
+            background: rgba(255, 255, 255, 0.70);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transform: translateY(-2px);
+        }
         html { scroll-behavior: smooth; }
-        .project-header { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; color: #ea580c; margin-bottom: 0.5rem; display: block; }
     </style>
 </head>
-<body class="bg-[#f8f9fa] text-gray-800 antialiased selection:bg-orange-100 selection:text-orange-800">
+<body class="bg-[#fdfbf7] text-gray-800 antialiased selection:bg-orange-100 selection:text-orange-900">
 
-    <nav class="fixed top-0 w-full z-50 glass-panel">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center">
-                    <span class="font-bold text-xl tracking-tight text-gray-900">SU<span class="text-orange-600">.</span></span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <button onclick="scrollToSection('hero')" class="text-sm font-medium hover:text-orange-600 transition-colors">Home</button>
-                    <button onclick="scrollToSection('projects')" class="text-sm font-medium hover:text-orange-600 transition-colors">Projects</button>
-                    <button onclick="scrollToSection('experience')" class="text-sm font-medium hover:text-orange-600 transition-colors">Experience</button>
-                    <button onclick="scrollToSection('skills')" class="text-sm font-medium hover:text-orange-600 transition-colors">Skills</button>
-                </div>
-                <div class="flex items-center gap-4">
-                    <a href="https://linkedin.com/in/syed-uzair-mohiuddin" target="_blank" class="bg-gray-900 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors shadow-lg">Connect</a>
-                </div>
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/40">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="font-bold text-lg tracking-tight text-gray-900">SYED UZAIR MOHIUDDIN<span class="text-orange-600">.</span></div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+                <a href="#projects" class="hover:text-orange-600 transition-colors">Case Studies</a>
+                <a href="#experience" class="hover:text-orange-600 transition-colors">Experience</a>
+                <a href="#skills" class="hover:text-orange-600 transition-colors">Skills</a>
+                <a href="Syed_Uzair_Mohiuddin_FlowCV_Resume_2026-03-28.pdf" download 
+                   class="bg-gray-900 text-white px-5 py-2.5 rounded-lg hover:bg-orange-600 transition-all shadow-md">
+                    Download Resume
+                </a>
             </div>
         </div>
     </nav>
 
-    <main class="pt-24 pb-12">
-        <section id="hero" class="min-h-[80vh] flex flex-col justify-center">
-            <div class="max-w-4xl mx-auto px-4 text-center">
-                <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-6">Syed Uzair Mohiuddin</h1>
-                <p class="text-2xl font-semibold text-orange-600 mb-8">Data Analyst</p>
-                <div class="max-w-3xl mx-auto text-gray-600 text-lg leading-relaxed space-y-4">
-                    <p>Experienced in analyzing <strong>60K-100K+ records</strong> to uncover revenue drivers, pricing impact, and customer behavior[cite: 168].</p>
-                    <p>Focused on solving business problems related to <strong>revenue, margins, and customer performance</strong> using SQL, Python, and Power BI[cite: 169, 170].</p>
-                </div>
+    <section id="hero" class="pt-40 pb-32 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h1 class="text-5xl md:text-7xl font-bold mb-8 text-gray-900 leading-tight">
+                Data Analyst turning<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600">data into decisions.</span>
+            </h1>
+            <p class="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-10">
+                Experienced in analyzing <strong>60K-100K+ records</strong> to uncover revenue drivers and customer behavior[cite: 168]. 
+                Focused on solving business problems using <strong>SQL, Python, and Power BI</strong>[cite: 169, 170].
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button onclick="document.getElementById('projects').scrollIntoView()" class="px-8 py-3.5 rounded-xl bg-gray-900 text-white font-semibold hover:bg-orange-600 transition-all">View Case Studies</button>
+                <a href="Syed_Uzair_Mohiuddin_FlowCV_Resume_2026-03-28.pdf" target="_blank" class="px-8 py-3.5 rounded-xl bg-white border border-gray-200 text-gray-700 font-semibold hover:bg-orange-50 transition-all">View Resume PDF</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="projects" class="py-20 bg-white">
-            <div class="max-w-4xl mx-auto px-4">
-                <h2 class="text-3xl font-bold text-gray-900 mb-12 border-l-4 border-orange-600 pl-4 text-center md:text-left">Key Projects</h2>
-                
-                <div class="space-y-16">
-                    <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Regional Sales Performance & Profitability Analysis</h3>
-                        <p class="text-xs font-mono text-orange-700 mb-6">Tools: SQL, Python, Power BI [cite: 177]</p>
-                        <ul class="list-disc pl-5 space-y-3 text-gray-600 text-sm">
-                            <li>Analyzed <strong>64K+ transactions</strong> across 5 years to identify key revenue and margin drivers.</li>
-                            <li>Performed <strong>correlation analysis</strong> to evaluate the relationship between pricing and profitability[cite: 174].</li>
-                            <li>Identified pricing as the primary profit lever, with potential to improve margins by <strong>~8-12%</strong>[cite: 175].</li>
-                            <li>Detected margin leakage from high-discount products and regional pricing inefficiencies[cite: 175].</li>
-                            <li>Built Power BI dashboard for identifying pricing inefficiencies and margin leakage[cite: 176].</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Customer Shopping Behavior & Segmentation Analysis</h3>
-                        <p class="text-xs font-mono text-orange-700 mb-6">Tools: SQL, Python, Power BI [cite: 182]</p>
-                        <ul class="list-disc pl-5 space-y-3 text-gray-600 text-sm">
-                            <li>Analyzed <strong>3.9K+ transactions</strong> to identify purchasing patterns and revenue distribution[cite: 179].</li>
-                            <li>Identified repeat customers as primary revenue drivers, supporting retention strategies[cite: 180].</li>
-                            <li>Discovered higher <strong>AOV (Average Order Value)</strong> among express shipping users and subscribers[cite: 181].</li>
-                            <li>Built dashboard to track and analyze customer segments and revenue trends[cite: 182].</li>
-                        </ul>
+    <section id="projects" class="py-24">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">Selected Projects</h2>
+            
+            <div class="glass-card rounded-3xl p-8 mb-12">
+                <div class="flex flex-col md:flex-row justify-between mb-6">
+                    <h3 class="text-2xl font-bold">Regional Sales & Profitability Analysis [cite: 172]</h3>
+                    <div class="flex gap-2 text-xs font-semibold">
+                        <span class="bg-gray-100 px-3 py-1 rounded">SQL</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded">Python</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded">Power BI</span>
                     </div>
                 </div>
+                <ul class="list-disc ml-5 space-y-2 text-sm text-gray-600">
+                    <li>Analyzed <strong>64K+ transactions</strong> across 5 years to identify margin drivers[cite: 173].</li>
+                    <li>Identified pricing as primary profit lever with potential to improve margins by <strong>~8-12%</strong>[cite: 175].</li>
+                    <li>Built Power BI dashboard tracking revenue, margin %, and pricing impact[cite: 176].</li>
+                </ul>
             </div>
-        </section>
 
-        <section id="experience" class="py-20 bg-[#f8f9fa] border-y">
-            <div class="max-w-4xl mx-auto px-4">
-                <h2 class="text-3xl font-bold text-gray-900 mb-12 border-l-4 border-orange-600 pl-4">Professional Experience</h2>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200">
-                    <div class="flex flex-col md:flex-row justify-between mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">Data Analyst Intern (Project-Based)</h3>
-                        <span class="text-orange-600 font-medium">Full Stack Academy | 01/2025 – 05/2025 [cite: 184, 192]</span>
-                    </div>
-                    <ul class="list-disc pl-5 text-gray-600 text-sm space-y-3">
-                        <li>Analyzed datasets (<strong>50K-200K rows</strong>) to answer business questions on revenue and retention.</li>
-                        <li>Built advanced SQL queries (<strong>CTEs, joins, aggregations, window functions</strong>) for insight extraction[cite: 186].</li>
-                        <li>Cleaned and validated data, reducing inconsistencies by <strong>~30%</strong>[cite: 187].</li>
-                        <li>Built Power BI dashboards for tracking revenue and customer KPIs, improving visibility into performance trends[cite: 188].</li>
-                        <li>Automated reports using SQL & Excel, reducing manual effort by <strong>~40%</strong>[cite: 189].</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="py-20 bg-white">
-            <div class="max-w-4xl mx-auto px-4">
-                <h2 class="text-3xl font-bold text-gray-900 mb-12 border-l-4 border-orange-600 pl-4">Technical Skills</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div class="space-y-6">
-                        <span class="project-header">Programming & Tools [cite: 196]</span>
-                        <ul class="text-sm text-gray-600 space-y-2">
-                            <li><strong>Python:</strong> Pandas, NumPy [cite: 197]</li>
-                            <li><strong>SQL:</strong> PostgreSQL, CTEs, Joins, Window Functions [cite: 198]</li>
-                            <li><strong>Power BI:</strong> DAX, Data Modeling - Star Schema [cite: 199]</li>
-                            <li><strong>Excel:</strong> Pivot Tables, XLOOKUP, Automation [cite: 200]</li>
-                            <li><strong>Other:</strong> Git, Jupyter Notebook [cite: 201]</li>
-                        </ul>
-                    </div>
-                    <div class="space-y-6">
-                        <span class="project-header">Analytics & Concepts [cite: 207]</span>
-                        <ul class="text-sm text-gray-600 space-y-2">
-                            <li>Data Cleaning & Validation [cite: 208]</li>
-                            <li>Exploratory Data Analysis (EDA) [cite: 209]</li>
-                            <li>KPI & Revenue Analysis | Correlation Analysis [cite: 210]</li>
-                            <li>Dashboarding & Data Visualization [cite: 212]</li>
-                            <li>Business Insights & Reporting [cite: 213]</li>
-                        </ul>
+            <div class="glass-card rounded-3xl p-8">
+                <div class="flex flex-col md:flex-row justify-between mb-6">
+                    <h3 class="text-2xl font-bold">Customer Shopping Behavior Analysis [cite: 178]</h3>
+                    <div class="flex gap-2 text-xs font-semibold">
+                        <span class="bg-gray-100 px-3 py-1 rounded">SQL</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded">Python</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded">Power BI</span>
                     </div>
                 </div>
+                <ul class="list-disc ml-5 space-y-2 text-sm text-gray-600">
+                    <li>Analyzed <strong>3.9K+ transactions</strong> to identify purchasing patterns[cite: 179].</li>
+                    <li>Discovered higher <strong>AOV</strong> among express shipping users and subscribers[cite: 181].</li>
+                    <li>Identified repeat customers as primary revenue drivers to support retention[cite: 180].</li>
+                </ul>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <footer class="bg-gray-900 text-white py-16 text-center">
-            <div class="max-w-4xl mx-auto px-4">
-                <div class="flex justify-center gap-6 mb-8 text-sm">
-                    <a href="mailto:syeduzair041@gmail.com" class="hover:text-orange-400 transition-colors">Email</a>
-                    <span class="text-gray-700">|</span>
-                    <a href="https://linkedin.com/in/syed-uzair-mohiuddin" target="_blank" class="hover:text-orange-400 transition-colors">LinkedIn</a>
-                    <span class="text-gray-700">|</span>
-                    <a href="https://github.com/SyedUzair-SF" target="_blank" class="hover:text-orange-400 transition-colors">GitHub</a>
-                </div>
-                <a href="Syed_Uzair_Mohiuddin_FlowCV_Resume_2026-03-28.pdf" target="_blank" class="inline-block border border-orange-500 text-orange-500 px-6 py-2 rounded-full hover:bg-orange-500 hover:text-white transition-all text-sm font-medium">Download Resume PDF</a>
-                <p class="text-gray-600 text-xs mt-12">© 2026 Syed Uzair Mohiuddin [cite: 158]</p>
+    <section id="experience" class="py-24 bg-white/50">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12">Professional Experience</h2>
+            <div class="glass-card rounded-3xl p-8 text-left border-l-8 border-orange-600">
+                <h3 class="text-xl font-bold">Data Analyst Intern (Project-Based) [cite: 184]</h3>
+                <p class="text-orange-600 font-medium mb-4">Full Stack Academy | 01/2025 - 05/2025 [cite: 192]</p>
+                <ul class="list-disc ml-5 space-y-2 text-sm text-gray-600">
+                    <li>Analyzed datasets (<strong>50K-200K rows</strong>) using advanced SQL (CTEs, Window Functions)[cite: 185, 186].</li>
+                    <li>Cleaned and validated data, reducing inconsistencies by <strong>~30%</strong>[cite: 187].</li>
+                    <li>Automated reports using SQL & Excel, reducing manual effort by <strong>~40%</strong>[cite: 189].</li>
+                </ul>
             </div>
-        </footer>
-    </main>
+        </div>
+    </section>
 
-    <script>
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
+    <section id="skills" class="py-24">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12">Technical Toolkit</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-gray-900 text-white px-6 py-2 rounded-full text-sm">Python (Pandas, NumPy) [cite: 197]</span>
+                <span class="bg-gray-900 text-white px-6 py-2 rounded-full text-sm">SQL (PostgreSQL, Window Functions) [cite: 198]</span>
+                <span class="bg-gray-900 text-white px-6 py-2 rounded-full text-sm">Power BI (Star Schema) [cite: 199]</span>
+                <span class="bg-gray-900 text-white px-6 py-2 rounded-full text-sm">Excel (Pivot Tables, Automation) [cite: 200]</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-20 text-center">
+        <p class="mb-6">© 2026 Syed Uzair Mohiuddin. All rights reserved.</p>
+        <div class="flex justify-center gap-6 text-sm">
+            <a href="mailto:syeduzair041@gmail.com" class="hover:text-orange-400 transition-colors">Email</a>
+            <a href="https://linkedin.com/in/syed-uzair-mohiuddin" target="_blank" class="hover:text-orange-400 transition-colors">LinkedIn</a>
+            <a href="https://github.com/SyedUzair-SF" target="_blank" class="hover:text-orange-400 transition-colors">GitHub</a>
+        </div>
+    </footer>
+
 </body>
 </html>
